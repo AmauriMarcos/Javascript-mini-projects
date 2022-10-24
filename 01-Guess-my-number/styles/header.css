@@ -1,0 +1,60 @@
+/*  color: #eee;
+    background-color: #222; */
+
+.header-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-top .btn-again{
+    border: none;
+    padding: 1.2rem 1.5rem;
+    width: 12rem;
+    color: #222;
+    background-color: #eee;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.3rem;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.header-top .range-numbers{
+    font-size: 1.1rem;
+}
+
+.title{
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+/* Result number section */
+
+.line{
+    width: 100%;
+    height: 2rem;
+    background-color: #ccc;
+    position: relative;
+    margin: 10rem 0;
+}
+
+.scoreboard{
+    width: auto;
+    height: auto;
+    padding: 2rem 2.5rem;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.scoreboard .number{
+    font-size: 5rem;
+    color: #222;
+}
