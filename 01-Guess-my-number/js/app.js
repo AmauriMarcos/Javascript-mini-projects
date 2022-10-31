@@ -1,4 +1,5 @@
 'use strict';
+
 /* buttons */
 const checkButton = document.querySelector('.btn-check');
 const againButton = document.querySelector('.btn-again');
@@ -6,7 +7,7 @@ const againButton = document.querySelector('.btn-again');
 /* guess number */
 const input = document.querySelector('.input-guess');
 
-/* Hidden secret number AND text message that needs to change according with results */
+/* Hidden secret number AND text message that needs to be changed according with results */
 let mySecret = document.querySelector('.number');
 let message = document.querySelector('.message');
 
@@ -24,7 +25,7 @@ if(score === 20 && highscore === 0){
 /* My Secret number */
 let secretNumber = Math.floor(Math.random()*20+1);
 
-/* Check event to compare guess number againt secret number */
+/* Check event to compare guess number against secret number */
 checkButton.addEventListener('click', () => {
     let guessNumber = input.value
     if(+guessNumber < secretNumber){
@@ -39,6 +40,7 @@ checkButton.addEventListener('click', () => {
     }else if(+guessNumber === secretNumber){
         message.innerHTML = 'You got it right!'
         mySecret.innerHTML = secretNumber;
+        document.querySelector('body').style.backgroundColor = '#60b347';
         scoreNumber.innerHTML = score;
         score = score;
 
@@ -55,6 +57,7 @@ againButton.addEventListener('click', () => {
     score = 20;
     scoreNumber.innerHTML = 20;
     message.innerHTML = 'Start guessing...'
+    document.querySelector('body').style.backgroundColor = '#222';
     mySecret.innerHTML = '?'
 
     if(+highscore === 0 || highscore === 20){
