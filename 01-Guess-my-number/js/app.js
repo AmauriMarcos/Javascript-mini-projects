@@ -28,15 +28,13 @@ let secretNumber = Math.floor(Math.random()*20+1);
 /* Check event to compare guess number against secret number */
 checkButton.addEventListener('click', () => {
     let guessNumber = input.value
+    
     if(+guessNumber < secretNumber){
-        message.innerHTML = 'Too low!'
-        scoreNumber.innerHTML = score -1;
-        score -= 1;
+        subtractOneFromScoreAndShowAHint('Too low!');
        
     }else if(+guessNumber > secretNumber){
-        message.innerHTML = 'Too hight!'
-        scoreNumber.innerHTML = score -1;
-        score -= 1;
+        subtractOneFromScoreAndShowAHint('Too hight!');
+
     }else if(+guessNumber === secretNumber){
         message.innerHTML = 'You got it right!'
         mySecret.innerHTML = secretNumber;
@@ -71,3 +69,8 @@ againButton.addEventListener('click', () => {
 });
 
 
+const subtractOneFromScoreAndShowAHint = (hint) => {
+    message.innerHTML = hint
+    scoreNumber.innerHTML = score -1;
+    score -= 1;
+}
